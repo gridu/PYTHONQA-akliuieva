@@ -1,0 +1,6 @@
+venv/
+.pytest_cache
+__pycache__
+.idea
+allure_results
+uiAutomation-env/
