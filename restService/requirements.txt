@@ -2,3 +2,5 @@ requests
 flask
 pytest
 pyHamcrest
+pylint
+configparser
