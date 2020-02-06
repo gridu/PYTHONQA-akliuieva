@@ -2,3 +2,5 @@ venv/
 .pytest_cache
 __pycache__
 .idea
+tests/.pytest_cache
+restService-env/

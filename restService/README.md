@@ -50,13 +50,13 @@ Install required packages:
 `pip3 install -r requirements.txt`
 
 Run rest service:
-`python3 BookService.py`
+`python3 restService/BookService.py`
 
 Run tests:
-`pytest BookServiceTest.py`
+`pytest tests/BookServiceTest.py`
 
 Run smoke tests:
-`pytest -v -m "smoke" BookServiceTest.py`
+`pytest -v -m "smoke" tests/BookServiceTest.py`
 
 Run smoke tests or get tests:
-`pytest -v -m "smoke or get" BookServiceTest.py`
+`pytest -v -m "smoke or get" tests/BookServiceTest.py`

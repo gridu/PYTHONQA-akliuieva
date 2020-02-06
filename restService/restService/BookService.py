@@ -152,11 +152,9 @@ def get_last_books(limit):
         Json with list of books
     """
     books.sort(key=lambda x: x._updated_date_time, reverse=True)
-    new_books = []
-    for i in range(len(books) if len(books) < limit else limit):
-        new_books.append(books[i])
+    result = len(books) if len(books) < limit else limit
 
-    return make_response(jsonify([book.json() for book in new_books]), 200)
+    return make_response(jsonify([book.json() for book in books[:result]]), 200)
 
 
 @app.route("/v1/books/info/<string:id>", methods=['GET'])
@@ -188,7 +186,7 @@ def get_all_ids_for_books_with_title(title):
         if book._title == title:
             list_with_ids.append(book._id)
 
-    if len(list_with_ids) == 0:
+    if not list_with_ids:
         return make_response("No books with title " + title, 404)
     return make_response(jsonify(list_with_ids), 200)
 
